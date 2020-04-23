@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p build && cd build
+mkdir -p buildRelease && cd buildRelease
 cmake --config=Release ..
 make -j$(nproc)
 cd ..
