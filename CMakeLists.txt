@@ -36,7 +36,7 @@ file(GLOB_RECURSE input_srcs "src/input/*.c")
 set(mod_input ${input_hdrs} ${input_srcs})
 
 # Setup Shards
-add_library(${PROJECT_NAME} STATIC ${mod_graphics} ${mod_utils} ${mod_input})
+add_library(${PROJECT_NAME} STATIC ${mod_utils} ${mod_graphics}  ${mod_input})
 target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} glad glfw ${GLFW_LIBRARIES})
 
 # Set compiler arguments.
