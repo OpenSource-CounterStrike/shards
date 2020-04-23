@@ -6,31 +6,49 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build-Debug
+    - name: Build Debug
       run: ./build.sh
-    - name: Test-Debug
+    - name: Test Debug
       run: |
         cd build
         ctest -j$(nproc)
-    - name: Build-Release
+    - name: Build Release
       run: ./buildRelease.sh
-    - name: Test-Release.sh
+    - name: Test Release
       run: |
-        cd buildRelease
+        ./buildRelease.sh
         ctest -j$(nproc)
   macOS-build:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build-Debug
+    - name: Build Debug
       run: ./build.sh
     - name: Test-Debug
       run: |
         cd build
         ctest -j$(nproc)
-    - name: Build-Release
+    - name: Build Release
       run: ./buildRelease.sh
-    - name: Test-Release.sh
+    - name: Test Release
       run: |
-        cd buildRelease
+        ./buildRelease.sh
         ctest -j$(nproc)
+  windows-build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Build Debug
+      run: ./build.sh
+    - name: Test Debug
+      run: |
+        build.bat
+        ctest -j2
+    - name: Build Release
+      run: ./buildRelease.sh
+    - name: Test Release
+      run: |
+        buildRelease.sh
+        ctest -j2
