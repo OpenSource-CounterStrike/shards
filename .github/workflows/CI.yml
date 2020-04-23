@@ -12,16 +12,8 @@ jobs:
       run: sudo apt install xorg-dev
     - name: Build Debug
       run: ./build.sh
-    - name: Test Debug
-      run: |
-        cd build
-        ctest -j$(nproc)
     - name: Build Release
       run: ./buildRelease.sh
-    - name: Test Release
-      run: |
-        cd buildRelease
-        ctest -j$(nproc)
   macOS-build:
     runs-on: macOS-latest
     steps:
@@ -30,16 +22,8 @@ jobs:
       uses: textbook/git-checkout-submodule-action@master
     - name: Build Debug
       run: ./build.sh
-    - name: Test-Debug
-      run: |
-        cd build
-        ctest -j$(nproc)
     - name: Build Release
       run: ./buildRelease.sh
-    - name: Test Release
-      run: |
-        cd buildRelease
-        ctest -j$(nproc)
   windows-build:
     runs-on: windows-latest
     steps:
@@ -52,12 +36,7 @@ jobs:
       run: |
         cmake --config=Debug .
         msbuild Shards.sln
-    - name: Test Debug
-      run: |
-        ctest -j2
     - name: Build Release
-      run: buildRelease.bat
-    - name: Test Release
       run: |
         cmake --config=Release .
         msbuild Shards.sln

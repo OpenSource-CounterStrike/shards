@@ -45,7 +45,3 @@ if(MSVC)
 else()
 	target_compile_options(${PROJECT_NAME} PUBLIC "-Wall" "-Wextra" "-Werror" "$<$<CONFIG:RELEASE>:-O3>")
 endif() 
-
-# Setup tests
-enable_testing()
-add_subdirectory(tests)
