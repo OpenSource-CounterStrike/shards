@@ -31,9 +31,19 @@ file(GLOB_RECURSE graphics_hdrs "src/graphics/*.h")
 file(GLOB_RECURSE graphics_srcs "src/graphics/*.c")
 set(mod_graphics ${graphics_hdrs} ${graphics_srcs})
 
+# Setup Util Module.
+file(GLOB_RECURSE util_hdrs "src/util/*.h")
+file(GLOB_RECURSE util_srcs "src/util/*.c")
+set(mod_utils ${util_hdrs} ${util_srcs})
+
+# Setup Input Module.
+file(GLOB_RECURSE input_hdrs "src/input/*.h")
+file(GLOB_RECURSE input_srcs "src/input/*.c")
+set(mod_input ${input_hdrs} ${input_srcs})
+
 # Setup Shards
-add_library(${PROJECT_NAME} ${mod_graphics})
-target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} glad ${GLFW_STATIC_LIBRARIES})
+add_library(${PROJECT_NAME} STATIC ${mod_graphics} ${mod_utils} ${mod_input})
+target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} glad glfw)
 
 # Setup tests
 enable_testing()
