@@ -16,7 +16,7 @@ jobs:
       run: ./buildRelease.sh
     - name: Test Release
       run: |
-        ./buildRelease.sh
+        cd buildRelease
         ctest -j$(nproc)
   macOS-build:
     runs-on: macOS-latest
@@ -32,7 +32,7 @@ jobs:
       run: ./buildRelease.sh
     - name: Test Release
       run: |
-        ./buildRelease.sh
+        cd buildRelease
         ctest -j$(nproc)
   windows-build:
     runs-on: windows-latest
@@ -41,14 +41,14 @@ jobs:
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build Debug
-      run: ./build.sh
+      run: build.bat
     - name: Test Debug
       run: |
-        build.bat
+        cd build
         ctest -j2
     - name: Build Release
-      run: ./buildRelease.sh
+      run: buildRelease.bat
     - name: Test Release
       run: |
-        buildRelease.sh
+        cd buildRelease
         ctest -j2
