@@ -18,7 +18,7 @@ unsigned char *file_read(const char *filename)
 	unsigned char *buffer = (unsigned char *)malloc(buffer_size + 1);
 	fread(buffer, 1, buffer_size, file);
 	if (!feof(file))
-		perror("Failed to read file size"); // TODO: USE LOGGING
+		perror("Failed to read file"); // TODO: USE LOGGING
 	fclose(file);
 
 	return buffer;
