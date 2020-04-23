@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project("Shards" VERSION 0.0.1 LANGUAGES C CXX)
+project("Shards" VERSION 0.0.1 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 99)
 
