@@ -11,6 +11,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 
 # Build GLAD
 add_subdirectory(vendor/glad/)
+include_directories(vendor/glad/include/)
 
 # Build GLFW
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
