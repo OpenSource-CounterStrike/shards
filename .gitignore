@@ -53,5 +53,6 @@ dkms.conf
 
 # Misc
 build/
+buildRelease/
 bin/
 lib/
