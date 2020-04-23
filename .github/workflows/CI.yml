@@ -41,14 +41,15 @@ jobs:
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build Debug
-      run: build.bat
+      run: |
+        cmake --config=Debug .
+        msbuild Shards.sln
     - name: Test Debug
       run: |
-        cd build
         ctest -j2
     - name: Build Release
       run: buildRelease.bat
     - name: Test Release
       run: |
-        cd buildRelease
-        ctest -j2
+        cmake --config=Release .
+        msbuild Shards.sln
