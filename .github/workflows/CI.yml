@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Checkout submodules
-      uses: textbook/git-checkout-submodule-action@master
+    - name: Submodules Init
+      uses: snickerbockers/submodules-init@v4
     - name: Install xorg-dev
       run: sudo apt install xorg-dev
     - name: Build Debug
@@ -17,9 +17,9 @@ jobs:
   macOS-build:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Checkout submodules
-      uses: textbook/git-checkout-submodule-action@master
+    - uses: actions/checkout@v2    
+    - name: Submodules Init
+      uses: snickerbockers/submodules-init@v4
     - name: Build Debug
       run: ./build.sh
     - name: Build Release
@@ -28,8 +28,8 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Checkout submodules
-      uses: textbook/git-checkout-submodule-action@master
+    - name: Submodules Init
+      uses: snickerbockers/submodules-init@v4
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build Debug
