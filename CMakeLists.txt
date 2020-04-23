@@ -37,7 +37,7 @@ set(mod_input ${input_hdrs} ${input_srcs})
 
 # Setup Shards
 add_library(${PROJECT_NAME} STATIC ${mod_graphics} ${mod_utils} ${mod_input})
-target_link_libraries(${PROJECT_NAME} STATIC ${OPENGL_LIBRARIES} glad glfw ${GLFW_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} glad glfw ${GLFW_LIBRARIES})
 
 # Set compiler arguments.
 if(MSVC)
@@ -45,3 +45,6 @@ if(MSVC)
 else()
 	target_compile_options(${PROJECT_NAME} PUBLIC "-Wall" "-Wextra" "-Werror" "$<$<CONFIG:RELEASE>:-O3>")
 endif() 
+
+# Add Sandbox
+add_subdirectory(sandbox)
