@@ -8,6 +8,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Checkout submodules
       uses: textbook/git-checkout-submodule-action@master
+    - name: Install xorg-dev
+      run: sudo apt install xorg-dev
     - name: Build Debug
       run: ./build.sh
     - name: Test Debug
@@ -24,6 +26,8 @@ jobs:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Checkout submodules
+      uses: textbook/git-checkout-submodule-action@master
     - name: Build Debug
       run: ./build.sh
     - name: Test-Debug
@@ -40,6 +44,8 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Checkout submodules
+      uses: textbook/git-checkout-submodule-action@master
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build Debug
