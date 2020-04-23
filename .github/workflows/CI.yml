@@ -1,0 +1,20 @@
+name: CI
+on: push
+
+jobs:
+  linux-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build-Debug
+      run: ./build.sh
+    - name: Test-Debug
+      run: |
+        cd build
+        ctest -j$(nproc)
+    - name: Build-Release
+      run: ./buildRelease.sh
+    - name: Test-Release.sh
+      run: |
+        cd buildRelease
+        ctest -j$(nproc)
