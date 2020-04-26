@@ -6,10 +6,11 @@
 
 int main()
 {
-	printf("Hello world.\n");
-	char helloworld[] = "Hello world.";
-	file_write("test", (unsigned char *)helloworld, strlen(helloworld));
-	unsigned char *result = file_read("test");
-	printf("%s", result);
+	ivec2 v2;
+	v2.x = 2;
+	v2.y = 3;
+	printf("%ld\n", v2.x);
+	printf("%ld\n", v2.y);
+
 	return 0;
 }

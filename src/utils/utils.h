@@ -5,4 +5,6 @@
 #include "file/file_write.c"
 #include "file/file_read.c"
 
+#include "maths/maths.h"
+
 #endif
