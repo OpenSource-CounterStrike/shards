@@ -8,7 +8,7 @@ void file_write(const char *filename, unsigned char *data, long long size)
 
 	/* Write data into file. */
 	fwrite(data, 1, size, file);
-	if (!feof(file))
+	if (ferror(file))
 		perror("Failed to write file"); // TODO: USE LOGGING
 
 	fclose(file);
