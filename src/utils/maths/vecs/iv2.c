@@ -18,7 +18,7 @@ void ivec2v_set(ivec2 *vec, const ivec2 *vec2)
 void ivec2_set(ivec2 *vec, INT v[2])
 {
 	assert(vec);
-	memcpy(vec->d, v, sizeof(*vec));
+	memcpy(vec->d, v, 2 * sizeof(INT));
 }
 
 void ivec2s_mul(ivec2 *vec, INT v1, INT v2)
