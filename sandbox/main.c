@@ -6,15 +6,16 @@
 
 int main()
 {
-	ivec2 v2;
-	v2.x = 2;
-	v2.y = 3;
-	ivec2 v2_1;
-	v2_1.x = 1;
-	v2_1.y = 4;
-	ivec2v_add(&v2, &v2_1);
-	printf("%ld %ld\n", v2.x, v2.d[0]);
-	printf("%ld %ld\n", v2.y, v2.d[1]);
+	ivec3 v3;
+	ivec3s_set(&v3, 2, 3, 4);
+
+	ivec3 v3_1;
+	ivec3s_set(&v3_1, 1, 4, 9);
+
+	ivec3v_add(&v3, &v3_1);
+	printf("%ld %ld\n", v3.x, v3.d[0]);
+	printf("%ld %ld\n", v3.y, v3.d[1]);
+	printf("%ld %ld\n", v3.z, v3.d[2]);
 
 	return 0;
 }
