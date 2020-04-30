@@ -2,8 +2,8 @@
 #define CONFIG_H
 
 #define MATH_INT int64_t
-#define MATH_FLOAT Float64
-#define MATH_USE_SMID true
-#define MATH_USE_STRUCTS true
+#define MATH_FLOAT double
+#define MATH_USE_SMID 1
+#define MATH_USE_STRUCTS 1
 
 #endif
