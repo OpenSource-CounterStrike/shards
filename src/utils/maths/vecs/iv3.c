@@ -1,6 +1,8 @@
 #ifndef MATHS_iVECS_3_H
 #define MATHS_iVECS_3_H
 
+#include "../vecs.h"
+
 void ivec3s_set(ivec3 *vec, INT v1, INT v2, INT v3)
 {
 	assert(vec);
