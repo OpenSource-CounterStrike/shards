@@ -3,12 +3,18 @@
 
 void ivec2s_set(ivec2 *vec, INT v1, INT v2)
 {
+	vec->x = v1;
+	vec->y = v2;
 }
 void ivec2v_set(ivec2 *vec, const ivec2 *vec2)
 {
+	vec->x = vec2->x;
+	vec->y = vec2->y;
 }
 void ivec2s_set(ivec2 *vec, INT v[2])
 {
+	vec->x = v[0];
+	vec->y = v[1];
 }
 
 void ivec2s_mul(ivec2 *vec, INT v1, INT v2)

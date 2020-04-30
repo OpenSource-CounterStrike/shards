@@ -28,6 +28,8 @@
 #ifndef MATHS_VECS_H
 #define MATHS_VECS_H
 
+#include <stdint.h>
+
 #include "config.h"
 
 #define INT MATH_INT
