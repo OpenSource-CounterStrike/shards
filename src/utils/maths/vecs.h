@@ -29,6 +29,7 @@
 #define MATHS_VECS_H
 
 #include <stdint.h>
+#include <assert.h>
 
 #include "config.h"
 
@@ -42,7 +43,7 @@ typedef union ivec2 {
 		INT y;
 	};
 #endif
-	INT dat[2];
+	INT d[2];
 } ivec2;
 void ivec2s_set(ivec2 *vec, INT v1, INT v2);
 void ivec2v_set(ivec2 *vec, const ivec2 *vec2);
@@ -73,7 +74,7 @@ typedef union ivec3 {
 		INT b;
 	};
 #endif
-	INT dat[3];
+	INT d[3];
 } ivec3;
 void ivec3s_set(ivec3 *vec, INT v1, INT v2, INT v3);
 void ivec3v_set(ivec3 *vec, const ivec3 *vec2);
@@ -106,7 +107,7 @@ typedef union ivec4 {
 		INT a;
 	};
 #endif
-	INT dat[4];
+	INT d[4];
 } ivec4;
 void ivec4s_set(ivec4 *vec, INT v1, INT v2, INT v3, INT v4);
 void ivec4v_set(ivec4 *vec, const ivec4 *vec2);
@@ -131,7 +132,7 @@ typedef union dvec2 {
 		FLOAT y;
 	};
 #endif
-	FLOAT dat[2];
+	FLOAT d[2];
 } dvec2;
 void dvec2s_set(dvec2 *vec, FLOAT v1, FLOAT v2);
 void dvec2v_set(dvec2 *vec, const dvec2 *vec2);
@@ -162,7 +163,7 @@ typedef union dvec3 {
 		FLOAT b;
 	};
 #endif
-	FLOAT dat[3];
+	FLOAT d[3];
 } dvec3;
 void dvec3s_set(dvec3 *vec, FLOAT v1, FLOAT v2, FLOAT v3);
 void dvec3v_set(dvec3 *vec, const dvec3 *vec2);
@@ -195,7 +196,7 @@ typedef union dvec4 {
 		FLOAT a;
 	};
 #endif
-	FLOAT dat[4];
+	FLOAT d[4];
 } dvec4;
 void dvec4s_set(dvec4 *vec, FLOAT v1, FLOAT v2, FLOAT v3, FLOAT v4);
 void dvec4v_set(dvec4 *vec, const dvec4 *vec2);
