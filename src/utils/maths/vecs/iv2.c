@@ -13,14 +13,12 @@ void ivec2v_set(ivec2 *vec, const ivec2 *vec2)
 {
 	assert(vec);
 	assert(vec2);
-	vec->d[0] = vec2->d[0];
-	vec->d[1] = vec2->d[1];
+	memcpy(vec, vec2, sizeof(*vec));
 }
 void ivec2_set(ivec2 *vec, INT v[2])
 {
 	assert(vec);
-	vec->d[0] = v[0];
-	vec->d[1] = v[1];
+	memcpy(vec->d, v, sizeof(*vec));
 }
 
 void ivec2s_mul(ivec2 *vec, INT v1, INT v2)
