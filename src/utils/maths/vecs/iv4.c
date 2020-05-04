@@ -15,9 +15,9 @@ void ivec4v_set(ivec4 *vec, const ivec4 *vec2)
 {
 	assert(vec);
 	assert(vec2);
-	memcpy(vec, vec2, sizeof(vec));
+	memcpy(vec, vec2, sizeof(*vec));
 }
-void ivec4s_set(ivec4 *vec, INT v[4])
+void ivec4_set(ivec4 *vec, INT v[4])
 {
 	assert(vec);
 	memcpy(vec->d, v, 4 * sizeof(INT));
@@ -125,4 +125,9 @@ void ivec4v_sub(ivec4 *vec, const ivec4 *vec2)
 	vec->d[3] -= vec2->d[3];
 }
 
+FLOAT ivec4_mag(const ivec4 *vec)
+{
+	return sqrt(pow(vec->d[0], 2) + pow(vec->d[1], 2) + pow(vec->d[2], 2) +
+		    pow(vec->d[3], 2));
+}
 #endif

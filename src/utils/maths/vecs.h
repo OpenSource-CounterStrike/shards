@@ -127,7 +127,7 @@ void ivec4s_sub(ivec4 *vec, INT v1, INT v2, INT v3, INT v4);
 void ivec4_sub(ivec4 *vec, INT v[4]);
 void ivec4u_sub(ivec4 *vec, INT v);
 void ivec4v_sub(ivec4 *vec, const ivec4 *vec2);
-INT ivec4_mag(const ivec4 *vec);
+FLOAT ivec4_mag(const ivec4 *vec);
 
 typedef union dvec2 {
 #if MATH_USE_STRUCTS

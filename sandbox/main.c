@@ -25,5 +25,8 @@ int main()
 	ivec3s_set(&v3_2, 1, 4, 9);
 	printf("Mag v3: %f\n", ivec3_mag(&v3_2));
 
+	ivec4 v4_2;
+	ivec4s_set(&v4_2, 1, 4, 9, 4);
+	printf("Mag v4: %f\n", ivec4_mag(&v4_2));
 	return 0;
 }
