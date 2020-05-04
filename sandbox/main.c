@@ -37,5 +37,9 @@ int main()
 	dvec3s_set(&dv3_2, 1, 4, 9);
 	printf("Mag dv3: %f\n", dvec3_mag(&dv3_2));
 
+	dvec4 dv4_2;
+	dvec4s_set(&dv4_2, 1, 4, 9, 4);
+	printf("Mag dv4: %f\n", dvec4_mag(&dv4_2));
+
 	return 0;
 }

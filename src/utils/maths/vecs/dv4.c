@@ -15,12 +15,12 @@ void dvec4v_set(dvec4 *vec, const dvec4 *vec2)
 {
 	assert(vec);
 	assert(vec2);
-	memcpy(vec, vec2, sizeof(vec));
+	memcpy(vec, vec2, sizeof(*vec));
 }
-void dvec4s_set(dvec4 *vec, FLOAT v[4])
+void dvec4_set(dvec4 *vec, FLOAT v[4])
 {
 	assert(vec);
-	memcpy(vec - d, v, 4 * sizeof(FLOAT));
+	memcpy(vec->d, v, 4 * sizeof(FLOAT));
 }
 
 void dvec4s_mul(dvec4 *vec, FLOAT v1, FLOAT v2, FLOAT v3, FLOAT v4)
@@ -125,4 +125,9 @@ void dvec4v_sub(dvec4 *vec, const dvec4 *vec2)
 	vec->d[3] -= vec2->d[3];
 }
 
+FLOAT dvec4_mag(const dvec4 *vec)
+{
+	return sqrt(pow(vec->d[0], 2) + pow(vec->d[1], 2) + pow(vec->d[2], 2) +
+		    pow(vec->d[3], 2));
+}
 #endif
