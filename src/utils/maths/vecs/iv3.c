@@ -3,117 +3,118 @@
 
 #include "../vecs.h"
 
-void ivec3s_set(ivec3 *vec, INT v1, INT v2, INT v3)
+void ivec3s_set(ivec3 *vec0, INT v0, INT v1, INT v2)
 {
-	assert(vec);
-	vec->d[0] = v1;
-	vec->d[1] = v2;
-	vec->d[2] = v3;
+	assert(vec0);
+	vec0->d[0] = v0;
+	vec0->d[1] = v1;
+	vec0->d[2] = v2;
 }
-void ivec3v_set(ivec3 *vec, const ivec3 *vec2)
+void ivec3v_set(ivec3 *vec0, const ivec3 *vec1)
 {
-	assert(vec);
-	assert(vec2);
-	memcpy(vec, vec2, sizeof(*vec));
+	assert(vec0);
+	assert(vec1);
+	memcpy(vec0, vec1, sizeof(ivec3));
 }
-void ivec3_set(ivec3 *vec, INT v[3])
+void ivec3_set(ivec3 *vec0, INT v1[3])
 {
-	assert(vec);
-	memcpy(vec->d, v, 3 * sizeof(INT));
-}
-
-void ivec3s_mul(ivec3 *vec, INT v1, INT v2, INT v3)
-{
-	assert(vec);
-	vec->d[0] *= v1;
-	vec->d[1] *= v2;
-	vec->d[3] *= v3;
-}
-void ivec3_mul(ivec3 *vec, INT v[3])
-{
-	assert(vec);
-	vec->d[0] *= v[0];
-	vec->d[1] *= v[1];
-	vec->d[2] *= v[2];
-}
-void ivec3u_mul(ivec3 *vec, INT v)
-{
-	assert(vec);
-	vec->d[0] *= v;
-	vec->d[1] *= v;
-	vec->d[2] *= v;
-}
-void ivec3v_mul(ivec3 *vec, const ivec3 *vec2)
-{
-	assert(vec);
-	assert(vec2);
-	vec->d[0] *= vec2->d[0];
-	vec->d[1] *= vec2->d[1];
-	vec->d[2] *= vec2->d[2];
+	assert(vec0);
+	memcpy(vec0->d, v1, 3 * sizeof(INT));
 }
 
-void ivec3s_add(ivec3 *vec, INT v1, INT v2, INT v3)
+void ivec3s_mul(ivec3 *vec0, INT v0, INT v1, INT v2)
 {
-	assert(vec);
-	vec->d[0] += v1;
-	vec->d[1] += v2;
-	vec->d[3] += v3;
+	assert(vec0);
+	vec0->d[0] *= v0;
+	vec0->d[1] *= v1;
+	vec0->d[2] *= v2;
 }
-void ivec3_add(ivec3 *vec, INT v[3])
+void ivec3_mul(ivec3 *vec0, INT v1[3])
 {
-	assert(vec);
-	vec->d[0] += v[0];
-	vec->d[1] += v[1];
-	vec->d[2] += v[2];
+	assert(vec0);
+	vec0->d[0] *= v1[0];
+	vec0->d[1] *= v1[1];
+	vec0->d[2] *= v1[2];
 }
-void ivec3u_add(ivec3 *vec, INT v)
+void ivec3u_mul(ivec3 *vec0, INT v1)
 {
-	assert(vec);
-	vec->d[0] += v;
-	vec->d[1] += v;
-	vec->d[2] += v;
+	assert(vec0);
+	vec0->d[0] *= v1;
+	vec0->d[1] *= v1;
+	vec0->d[2] *= v1;
 }
-void ivec3v_add(ivec3 *vec, const ivec3 *vec2)
+void ivec3v_mul(ivec3 *vec0, const ivec3 *vec1)
 {
-	assert(vec);
-	assert(vec2);
-	vec->d[0] += vec2->d[0];
-	vec->d[1] += vec2->d[1];
-	vec->d[2] += vec2->d[2];
-}
-
-void ivec3s_sub(ivec3 *vec, INT v1, INT v2, INT v3)
-{
-	assert(vec);
-	vec->d[0] -= v1;
-	vec->d[1] -= v2;
-	vec->d[2] -= v3;
-}
-void ivec3_sub(ivec3 *vec, INT v[3])
-{
-	assert(vec);
-	vec->d[0] -= v[0];
-	vec->d[1] -= v[1];
-	vec->d[2] -= v[2];
-}
-void ivec3u_sub(ivec3 *vec, INT v)
-{
-	assert(vec);
-	vec->d[0] -= v;
-	vec->d[1] -= v;
-	vec->d[2] -= v;
-}
-void ivec3v_sub(ivec3 *vec, const ivec3 *vec2)
-{
-	assert(vec);
-	assert(vec2);
-	vec->d[0] -= vec2->d[0];
-	vec->d[1] -= vec2->d[1];
-	vec->d[2] -= vec2->d[2];
+	assert(vec0);
+	assert(vec1);
+	vec0->d[0] *= vec1->d[0];
+	vec0->d[1] *= vec1->d[1];
+	vec0->d[2] *= vec1->d[2];
 }
 
-FLOAT ivec3_mag(const ivec3 *vec)
+void ivec3s_add(ivec3 *vec0, INT v0, INT v1, INT v2)
 {
-	return sqrt(pow(vec->d[0], 2) + pow(vec->d[1], 2) + pow(vec->d[2], 2));
+	assert(vec0);
+	vec0->d[0] += v0;
+	vec0->d[1] += v1;
+	vec0->d[2] += v2;
+}
+void ivec3_add(ivec3 *vec0, INT v1[3])
+{
+	assert(vec0);
+	vec0->d[0] += v1[0];
+	vec0->d[1] += v1[1];
+	vec0->d[2] += v1[2];
+}
+void ivec3u_add(ivec3 *vec0, INT v1)
+{
+	assert(vec0);
+	vec0->d[0] += v1;
+	vec0->d[1] += v1;
+	vec0->d[2] += v1;
+}
+void ivec3v_add(ivec3 *vec0, const ivec3 *vec1)
+{
+	assert(vec0);
+	assert(vec1);
+	vec0->d[0] += vec1->d[0];
+	vec0->d[1] += vec1->d[1];
+	vec0->d[2] += vec1->d[2];
+}
+
+void ivec3s_sub(ivec3 *vec0, INT v0, INT v1, INT v2)
+{
+	assert(vec0);
+	vec0->d[0] -= v0;
+	vec0->d[1] -= v1;
+	vec0->d[2] -= v2;
+}
+void ivec3_sub(ivec3 *vec0, INT v1[3])
+{
+	assert(vec0);
+	vec0->d[0] -= v1[0];
+	vec0->d[1] -= v1[1];
+	vec0->d[2] -= v1[2];
+}
+void ivec3u_sub(ivec3 *vec0, INT v1)
+{
+	assert(vec0);
+	vec0->d[0] -= v1;
+	vec0->d[1] -= v1;
+	vec0->d[2] -= v1;
+}
+void ivec3v_sub(ivec3 *vec0, const ivec3 *vec1)
+{
+	assert(vec0);
+	assert(vec1);
+	vec0->d[0] -= vec1->d[0];
+	vec0->d[1] -= vec1->d[1];
+	vec0->d[2] -= vec1->d[2];
+}
+
+FLOAT ivec3_mag(const ivec3 *vec0)
+{
+	return sqrt(pow(vec0->d[0], 2) + pow(vec0->d[1], 2) +
+		    pow(vec0->d[2], 2));
 }
 #endif
