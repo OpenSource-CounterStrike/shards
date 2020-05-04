@@ -204,20 +204,20 @@ typedef union dvec4 {
 #endif
 	FLOAT d[4];
 } dvec4;
-void dvec4s_set(dvec4 *vec, FLOAT v1, FLOAT v2, FLOAT v3, FLOAT v4);
-void dvec4v_set(dvec4 *vec, const dvec4 *vec2);
-void dvec4_set(dvec4 *vec, FLOAT v[4]);
-void dvec4s_mul(dvec4 *vec, FLOAT v1, FLOAT v2, FLOAT v3, FLOAT v4);
-void dvec4_mul(dvec4 *vec, FLOAT v[4]);
-void dvec4u_mul(dvec4 *vec, FLOAT v);
-void dvec4v_mul(dvec4 *vec, const dvec4 *vec2);
-void dvec4s_add(dvec4 *vec, FLOAT v1, FLOAT v2, FLOAT v3, FLOAT v4);
-void dvec4_add(dvec4 *vec, FLOAT v[4]);
-void dvec4u_add(dvec4 *vec, FLOAT v);
-void dvec4v_add(dvec4 *vec, const dvec4 *vec2);
-void dvec4s_sub(dvec4 *vec, FLOAT v1, FLOAT v2, FLOAT v3, FLOAT v4);
-void dvec4_sub(dvec4 *vec, FLOAT v[4]);
-void dvec4u_sub(dvec4 *vec, FLOAT v);
-void dvec4v_sub(dvec4 *vec, const dvec4 *vec2);
-FLOAT dvec4_mag(const dvec4 *vec);
+void dvec4s_set(dvec4 *vec0, FLOAT v0, FLOAT v1, FLOAT v2, FLOAT v3);
+void dvec4v_set(dvec4 *vec0, const dvec4 *vec1);
+void dvec4_set(dvec4 *vec0, FLOAT v1[4]);
+void dvec4s_mul(dvec4 *vec0, FLOAT v0, FLOAT v1, FLOAT v2, FLOAT v3);
+void dvec4_mul(dvec4 *vec0, FLOAT v1[4]);
+void dvec4u_mul(dvec4 *vec0, FLOAT v1);
+void dvec4v_mul(dvec4 *vec0, const dvec4 *vec1);
+void dvec4s_add(dvec4 *vec0, FLOAT v0, FLOAT v1, FLOAT v2, FLOAT v3);
+void dvec4_add(dvec4 *vec0, FLOAT v1[4]);
+void dvec4u_add(dvec4 *vec0, FLOAT v1);
+void dvec4v_add(dvec4 *vec0, const dvec4 *vec1);
+void dvec4s_sub(dvec4 *vec0, FLOAT v0, FLOAT v1, FLOAT v2, FLOAT v3);
+void dvec4_sub(dvec4 *vec0, FLOAT v1[4]);
+void dvec4u_sub(dvec4 *vec0, FLOAT v1);
+void dvec4v_sub(dvec4 *vec0, const dvec4 *vec1);
+FLOAT dvec4_mag(const dvec4 *vec0);
 #endif
