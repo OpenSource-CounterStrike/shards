@@ -93,7 +93,7 @@ void ivec3s_sub(ivec3 *vec, INT v1, INT v2, INT v3);
 void ivec3_sub(ivec3 *vec, INT v[3]);
 void ivec3u_sub(ivec3 *vec, INT v);
 void ivec3v_sub(ivec3 *vec, const ivec3 *vec2);
-INT ivec3_mag(const ivec3 *vec);
+FLOAT ivec3_mag(const ivec3 *vec);
 
 typedef union ivec4 {
 #if MATH_USE_STRUCTS

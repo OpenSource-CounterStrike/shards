@@ -112,4 +112,8 @@ void ivec3v_sub(ivec3 *vec, const ivec3 *vec2)
 	vec->d[2] -= vec2->d[2];
 }
 
+FLOAT ivec3_mag(const ivec3 *vec)
+{
+	return sqrt(pow(vec->d[0], 2) + pow(vec->d[1], 2) + pow(vec->d[2], 2));
+}
 #endif
