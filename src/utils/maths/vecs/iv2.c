@@ -99,4 +99,8 @@ void ivec2v_sub(ivec2 *vec, const ivec2 *vec2)
 	vec->d[1] -= vec2->d[1];
 }
 
+FLOAT ivec2_mag(const ivec2 *vec)
+{
+	return sqrt(pow(vec->d[0], 2) + pow(vec->d[1], 2));
+}
 #endif

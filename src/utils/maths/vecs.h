@@ -30,6 +30,7 @@
 
 #include <stdint.h>
 #include <assert.h>
+#include <math.h>
 
 #include "config.h"
 
@@ -60,6 +61,7 @@ void ivec2s_sub(ivec2 *vec, INT v1, INT v2);
 void ivec2_sub(ivec2 *vec, INT v[2]);
 void ivec2u_sub(ivec2 *vec, INT v);
 void ivec2v_sub(ivec2 *vec, const ivec2 *vec2);
+FLOAT ivec2_mag(const ivec2 *vec);
 
 typedef union ivec3 {
 #if MATH_USE_STRUCTS
@@ -91,6 +93,7 @@ void ivec3s_sub(ivec3 *vec, INT v1, INT v2, INT v3);
 void ivec3_sub(ivec3 *vec, INT v[3]);
 void ivec3u_sub(ivec3 *vec, INT v);
 void ivec3v_sub(ivec3 *vec, const ivec3 *vec2);
+INT ivec3_mag(const ivec3 *vec);
 
 typedef union ivec4 {
 #if MATH_USE_STRUCTS
@@ -124,6 +127,7 @@ void ivec4s_sub(ivec4 *vec, INT v1, INT v2, INT v3, INT v4);
 void ivec4_sub(ivec4 *vec, INT v[4]);
 void ivec4u_sub(ivec4 *vec, INT v);
 void ivec4v_sub(ivec4 *vec, const ivec4 *vec2);
+INT ivec4_mag(const ivec4 *vec);
 
 typedef union dvec2 {
 #if MATH_USE_STRUCTS
@@ -149,6 +153,7 @@ void dvec2s_sub(dvec2 *vec, FLOAT v1, FLOAT v2);
 void dvec2_sub(dvec2 *vec, FLOAT v[2]);
 void dvec2u_sub(dvec2 *vec, FLOAT v);
 void dvec2v_sub(dvec2 *vec, const dvec2 *vec2);
+INT dvec2_mag(const dvec2 *vec);
 
 typedef union dvec3 {
 #if MATH_USE_STRUCTS
@@ -180,6 +185,7 @@ void dvec3s_sub(dvec3 *vec, FLOAT v1, FLOAT v2, FLOAT v3);
 void dvec3_sub(dvec3 *vec, FLOAT v[3]);
 void dvec3u_sub(dvec3 *vec, FLOAT v);
 void dvec3v_sub(dvec3 *vec, const dvec3 *vec2);
+INT dvec3_mag(const dvec3 *vec);
 
 typedef union dvec4 {
 #if MATH_USE_STRUCTS
@@ -213,4 +219,5 @@ void dvec4s_sub(dvec4 *vec, FLOAT v1, FLOAT v2, FLOAT v3, FLOAT v4);
 void dvec4_sub(dvec4 *vec, FLOAT v[4]);
 void dvec4u_sub(dvec4 *vec, FLOAT v);
 void dvec4v_sub(dvec4 *vec, const dvec4 *vec2);
+INT dvec4_mag(const dvec4 *vec);
 #endif

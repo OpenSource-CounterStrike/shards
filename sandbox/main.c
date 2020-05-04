@@ -17,5 +17,9 @@ int main()
 	printf("%ld %ld\n", v3.y, v3.d[1]);
 	printf("%ld %ld\n", v3.z, v3.d[2]);
 
+	ivec2 v2_1;
+	ivec2s_set(&v2_1, 1, 4);
+	printf("Mag: %f\n", ivec2_mag(&v2_1));
+
 	return 0;
 }
