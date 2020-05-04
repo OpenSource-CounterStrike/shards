@@ -28,5 +28,10 @@ int main()
 	ivec4 v4_2;
 	ivec4s_set(&v4_2, 1, 4, 9, 4);
 	printf("Mag v4: %f\n", ivec4_mag(&v4_2));
+
+	dvec2 dv2_1;
+	dvec2s_set(&dv2_1, 1, 4);
+	printf("Mag dv2: %f\n", dvec2_mag(&dv2_1));
+
 	return 0;
 }

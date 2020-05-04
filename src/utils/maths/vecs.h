@@ -153,7 +153,7 @@ void dvec2s_sub(dvec2 *vec, FLOAT v1, FLOAT v2);
 void dvec2_sub(dvec2 *vec, FLOAT v[2]);
 void dvec2u_sub(dvec2 *vec, FLOAT v);
 void dvec2v_sub(dvec2 *vec, const dvec2 *vec2);
-INT dvec2_mag(const dvec2 *vec);
+FLOAT dvec2_mag(const dvec2 *vec);
 
 typedef union dvec3 {
 #if MATH_USE_STRUCTS
@@ -185,7 +185,7 @@ void dvec3s_sub(dvec3 *vec, FLOAT v1, FLOAT v2, FLOAT v3);
 void dvec3_sub(dvec3 *vec, FLOAT v[3]);
 void dvec3u_sub(dvec3 *vec, FLOAT v);
 void dvec3v_sub(dvec3 *vec, const dvec3 *vec2);
-INT dvec3_mag(const dvec3 *vec);
+FLOAT dvec3_mag(const dvec3 *vec);
 
 typedef union dvec4 {
 #if MATH_USE_STRUCTS
@@ -219,5 +219,5 @@ void dvec4s_sub(dvec4 *vec, FLOAT v1, FLOAT v2, FLOAT v3, FLOAT v4);
 void dvec4_sub(dvec4 *vec, FLOAT v[4]);
 void dvec4u_sub(dvec4 *vec, FLOAT v);
 void dvec4v_sub(dvec4 *vec, const dvec4 *vec2);
-INT dvec4_mag(const dvec4 *vec);
+FLOAT dvec4_mag(const dvec4 *vec);
 #endif
