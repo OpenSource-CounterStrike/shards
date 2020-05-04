@@ -48,6 +48,9 @@ typedef union imat2x2 {
 #endif
 	INT dat[4];
 } imat2x2;
+void imat2x2s_set(imat2x2 *mat0, INT a, INT b, INT c, INT d);
+void imat2x2u_set(imat2x2 *mat0, INT v0);
+void imat2x2_set(imat2x2 *mat0, INT v0[4]);
 
 typedef union imat3x2 {
 #if MATH_USE_STRUCTS
@@ -57,6 +60,9 @@ typedef union imat3x2 {
 #endif
 	INT dat[6];
 } imat3x2;
+void imat3x2s_set(imat3x2 *mat0, INT a, INT b, INT c, INT d, INT e, INT f);
+void imat3x2u_set(imat3x2 *mat0, INT v0);
+void imat3x2_set(imat3x2 *mat0, INT v0[6]);
 
 typedef union imat3x3 {
 #if MATH_USE_STRUCTS
@@ -66,6 +72,10 @@ typedef union imat3x3 {
 #endif
 	INT dat[9];
 } imat3x3;
+void imat3x3s_set(imat3x3 *mat0, INT a, INT b, INT c, INT d, INT e, INT f,
+		  INT g, INT h, INT i);
+void imat3x3u_set(imat3x3 *mat0, INT v0);
+void imat3x3_set(imat3x3 *mat0, INT v0[9]);
 
 typedef union imat4x2 {
 #if MATH_USE_STRUCTS
@@ -75,6 +85,10 @@ typedef union imat4x2 {
 #endif
 	INT dat[8];
 } imat4x2;
+void imat4x2s_set(imat4x2 *mat0, INT a, INT b, INT c, INT d, INT e, INT f,
+		  INT g, INT h);
+void imat4x2u_set(imat4x2 *mat0, INT v0);
+void imat4x2_set(imat4x2 *mat0, INT v0[8]);
 
 typedef union imat4x3 {
 #if MATH_USE_STRUCTS
@@ -84,6 +98,10 @@ typedef union imat4x3 {
 #endif
 	INT dat[12];
 } imat4x3;
+void imat4x3s_set(imat4x3 *mat0, INT a, INT b, INT c, INT d, INT e, INT f,
+		  INT g, INT h, INT i, INT j, INT k, INT l);
+void imat4x3u_set(imat4x3 *mat0, INT v0);
+void imat4x3_set(imat4x3 *mat0, INT v0[12]);
 
 typedef union imat4x4 {
 #if MATH_USE_STRUCTS
@@ -93,6 +111,11 @@ typedef union imat4x4 {
 #endif
 	INT dat[16];
 } imat4x4;
+void imat4x4s_set(imat4x4 *mat0, INT a, INT b, INT c, INT d, INT e, INT f,
+		  INT g, INT h, INT i, INT j, INT k, INT l, INT m, INT n, INT o,
+		  INT p);
+void imat4x4u_set(imat4x4 *mat0, INT v0);
+void imat4x4_set(imat4x4 *mat0, INT v0[16]);
 
 typedef union dmat2x2 {
 #if MATH_USE_STRUCTS
@@ -102,6 +125,9 @@ typedef union dmat2x2 {
 #endif
 	FLOAT dat[4];
 } dmat2x2;
+void dmat2x2s_set(dmat2x2 *mat0, FLOAT a, FLOAT b, FLOAT c, FLOAT d);
+void dmat2x2u_set(dmat2x2 *mat0, FLOAT v0);
+void dmat2x2_set(dmat2x2 *mat0, FLOAT v0[4]);
 
 typedef union dmat3x2 {
 #if MATH_USE_STRUCTS
@@ -111,6 +137,10 @@ typedef union dmat3x2 {
 #endif
 	FLOAT dat[6];
 } dmat3x2;
+void dmat3x2s_set(dmat3x2 *mat0, FLOAT a, FLOAT b, FLOAT c, FLOAT d, FLOAT e,
+		  FLOAT f);
+void dmat3x2u_set(dmat3x2 *mat0, FLOAT v0);
+void dmat3x2_set(dmat3x2 *mat0, FLOAT v0[6]);
 
 typedef union dmat3x3 {
 #if MATH_USE_STRUCTS
@@ -120,6 +150,10 @@ typedef union dmat3x3 {
 #endif
 	FLOAT dat[9];
 } dmat3x3;
+void dmat3x3s_set(dmat3x3 *mat0, FLOAT a, FLOAT b, FLOAT c, FLOAT d, FLOAT e,
+		  FLOAT f, FLOAT g, FLOAT h, FLOAT i);
+void dmat3x3u_set(dmat3x3 *mat0, FLOAT v0);
+void dmat3x3_set(dmat3x3 *mat0, FLOAT v0[9]);
 
 typedef union dmat4x2 {
 #if MATH_USE_STRUCTS
@@ -129,6 +163,10 @@ typedef union dmat4x2 {
 #endif
 	FLOAT dat[8];
 } dmat4x2;
+void dmat4x2s_set(dmat4x2 *mat0, FLOAT a, FLOAT b, FLOAT c, FLOAT d, FLOAT e,
+		  FLOAT f, FLOAT g, FLOAT h);
+void dmat4x2u_set(dmat4x2 *mat0, FLOAT v0);
+void dmat4x2_set(dmat4x2 *mat0, FLOAT v0[8]);
 
 typedef union dmat4x3 {
 #if MATH_USE_STRUCTS
@@ -138,6 +176,11 @@ typedef union dmat4x3 {
 #endif
 	FLOAT dat[12];
 } dmat4x3;
+void dmat4x3s_set(dmat4x3 *mat0, FLOAT a, FLOAT b, FLOAT c, FLOAT d, FLOAT e,
+		  FLOAT f, FLOAT g, FLOAT h, FLOAT i, FLOAT j, FLOAT k,
+		  FLOAT l);
+void dmat4x3u_set(dmat4x3 *mat0, FLOAT v0);
+void dmat4x3_set(dmat4x3 *mat0, FLOAT v0[12]);
 
 typedef union dmat4x4 {
 #if MATH_USE_STRUCTS
@@ -147,5 +190,10 @@ typedef union dmat4x4 {
 #endif
 	FLOAT dat[16];
 } dmat4x4;
+void dmat4x4s_set(dmat4x4 *mat0, FLOAT a, FLOAT b, FLOAT c, FLOAT d, FLOAT e,
+		  FLOAT f, FLOAT g, FLOAT h, FLOAT i, FLOAT j, FLOAT k, FLOAT l,
+		  FLOAT m, FLOAT n, FLOAT o, FLOAT p);
+void dmat4x4u_set(dmat4x4 *mat0, FLOAT v0);
+void dmat4x4_set(dmat4x4 *mat0, FLOAT v0[16]);
 
 #endif
