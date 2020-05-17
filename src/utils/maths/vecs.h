@@ -16,6 +16,8 @@
 #include <stdint.h>
 #include <assert.h>
 #include <math.h>
+#include <stdarg.h>
+#include <string.h>
 
 #include "config.h"
 
@@ -29,12 +31,14 @@
 
 typedef struct ivec {
 	INT *dat;
-	INT length;
+	size_t length;
 } ivec;
-ivec *ivec_create(INT length, const INT *dat);
-ivec *ivec_create_list(INT length, ...);
-void ivec_set(ivec *vec, const INT *dat, INT length);
-ivec ivec_mul(const ivec *left, const ivec *right);
+ivec *ivec_create(size_t length, const INT *dat);
+ivec *ivec_create_list(size_t length, ...);
+void ivec_destroy(ivec *vec);
+void ivec_set(ivec *vec, size_t length, const INT *dat);
+void ivec_set_list(ivec *vec, size_t length, ...);
+ivec ivec_mul(const ivec *left, const ivec *right); /* Hadamard Product */
 ivec ivec_add(const ivec *left, const ivec *right);
 ivec ivec_sub(const ivec *left, const ivec *right);
 FLOAT ivec_mag(const ivec *vec);
@@ -43,12 +47,13 @@ ivec ivec_cross_product(const ivec *right, const ivec *left);
 
 typedef struct dvec {
 	FLOAT *dat;
-	INT length;
+	size_t length;
 } dvec;
 dvec *dvec_create(INT length, const FLOAT *dat);
 dvec *dvec_create_list(INT length, ...);
+void dvec_destroy(dvec *vec);
 void dvec_set(dvec *vec, INT length, const FLOAT *dat);
-dvec dvec_mul(const dvec *left, const dvec *right);
+dvec dvec_mul(const dvec *left, const dvec *right); /* Hadamard Product */
 dvec dvec_add(const dvec *left, const dvec *right);
 dvec dvec_sub(const dvec *left, const dvec *right);
 FLOAT dvec_mag(const dvec *vec);
