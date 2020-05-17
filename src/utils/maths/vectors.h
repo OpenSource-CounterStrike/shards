@@ -49,10 +49,10 @@ typedef struct dvec {
 	FLOAT *dat;
 	size_t length;
 } dvec;
-dvec *dvec_create(INT length, const FLOAT *dat);
-dvec *dvec_create_list(INT length, ...);
+dvec *dvec_create(size_t length, const FLOAT *dat);
+dvec *dvec_create_list(size_t length, ...);
 void dvec_destroy(dvec *vec);
-void dvec_set(dvec *vec, INT length, const FLOAT *dat);
+void dvec_set(dvec *vec, size_t length, const FLOAT *dat);
 dvec dvec_mul(const dvec *left, const dvec *right); /* Hadamard Product */
 dvec dvec_add(const dvec *left, const dvec *right);
 dvec dvec_sub(const dvec *left, const dvec *right);

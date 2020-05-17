@@ -1,4 +1,4 @@
-#include "../vecs.h"
+#include "../vectors.h"
 
 ivec *ivec_create(size_t _length, const INT *_dat)
 {

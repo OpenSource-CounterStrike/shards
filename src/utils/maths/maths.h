@@ -4,7 +4,7 @@
 #include "matrices.h"
 #include "smid.h"
 
-#include "vecs.h"
+#include "vectors.h"
 #include "vecs/iv.c"
 #include "vecs/dv.c"
 
